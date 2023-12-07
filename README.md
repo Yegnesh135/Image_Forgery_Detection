@@ -31,5 +31,19 @@ The high-level pipeline is shown in the following image:
 ![image](https://github.com/Yegnesh135/Image_Forgery_Detection/assets/115040502/fd8f3606-96d7-46cd-acf8-f5a18fdfb8e5)
 
 
+**Network Architecture**
+
+The CNN architecture of this project is shown in the image below. The network structure is 2 convolutions, max pooling, 4 convolutions, max pooling and then 3 convolutions. In the training phase, after the final convolution, a fully connected layer with softmax is applied. In the testing phase, the 400-D output of the final convolutional layer is used in the next Feature Fusion step that creates the feature vectors.
+
+![image](https://github.com/Yegnesh135/Image_Forgery_Detection/assets/115040502/61be4e0b-846c-4abb-98bc-f363861169b3)
+
+**Feature Extraction**
+
+In order to create a feature representation of an image during the test phase, 224*224 patches are extracted and passed through the network. After this procedure, those feature maps are being exported. These feature maps are fused into one feature vector for each image either using max or mean fusion.
+
+**Classification Using SVM**
+
+For the final part of the pipeline an SVM classifier is trained and tested using the 400-D representations from the previous step. In particular, we use stratified 10-fold cross-validation to obtain an unbiased error estimate.
+
 
 

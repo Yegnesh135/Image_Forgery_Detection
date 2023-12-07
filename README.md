@@ -12,3 +12,9 @@ The proposed project takes a multi-faceted approach to digital image forgery det
 
 **Project Structure**:
 
+Image_foergery_detection.py: This have all the code
+
+Requirements.txt: Contains the requirements of the project
+
+
+
